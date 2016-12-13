@@ -23,5 +23,3 @@ for (i = 0; i <= a.length; i++) {
 	}
 }
 console.log("end count (while):", nWhile, "\nend count (for):", nFor);
-
-
