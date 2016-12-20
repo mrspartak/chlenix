@@ -1,7 +1,7 @@
 // Массивы
 // Вывести максимальный и минимальный числовой элемент массива
 
-var myArray = [2, -100, true, 'efwef', 2, 4, 6, 0 / 0, false, 1 / 0, - 1 / 0, {a: 123}, 10000], arr = [], max, min;
+var myArray = ["", 2, -100, true, 'efwef', 2, 4, 6, 0 / 0, false, 1 / 0, - 1 / 0, {a: 123}, 10000], arr = [], max, min;
 function isNumeric(n) {
 	return !isNaN(parseFloat(n)) && isFinite(n);
 };
