@@ -1,26 +1,38 @@
 // Массивы
 // Вывести максимальный и минимальный числовой элемент массива
 
-var myArray = ["", 2, -100, true, 'efwef', 2, -8687, 4, 6, 0 / 0, false, 1 / 0, - 1 / 0, {a: 123}, 10000], max, min;
+var myArray = ["", 2, -100, true, 'efwef', 2, -8687, 4, 6, 0 / 0, false, 1 / 0, - 1 / 0, {a: 123}, 10000], max, min, marker;
+
 function isNumeric(n) {
-	return !isNaN(parseFloat(n) ) && isFinite(n);
+	return !isNaN(parseFloat(n)) && isFinite(n);
 };
-max = myArray[0];
-min = max;
-for ( var i = 0; i < myArray.length;) {
-	if ( isNumeric( myArray[i] ) ) {
-		if ( min > myArray[i] ) {
+for (var i1 = 0; i1 < myArray.length; i1++) {
+	if (isNumeric(myArray[i1])) {
+		max = myArray[i1];
+		min = max;
+		break;
+	}
+	if (i1 == myArray[(myArray.length-1)]) {
+		marker = 1;
+	}
+}
+for (var i = 0; i < myArray.length; ) {
+	if (isNumeric(myArray[i])) {
+		if (min > myArray[i]) {
 			min = myArray[i]; 
 		}
-		if ( max < myArray[i] ) {
+		if (max < myArray[i]) {
 			max = myArray[i];
 		}
 	}
 	i++;
 }
-
+if (marker === 1) {
+	console.log('Insert anouther array with numbers');
+}
+else {
 console.log('Maximum = ', max, '\nMinumum = ', min);
-
+}
 /*
 isNumeric шикарно
 1. Тебе не нужно задавать переменную i2, если ты хочешь наполнить другой массив. Для этого есть метод push у Array.
