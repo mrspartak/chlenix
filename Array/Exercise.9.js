@@ -1,7 +1,7 @@
 // Массивы
 // Каждый элемент массива обернуть в массив #9
 
-var firstArray = [1, 3, 'gnome'], secondArray = [];
+var firstArray = [1, 3, 'gnome', '', , 1/0], secondArray = [];
 for (var i = 0; i < firstArray.length; ) {
 	secondArray.push([firstArray.shift()]);
 	// console.log('iteration: ', i, '\n1:', firstArray, '\n2:', secondArray);
