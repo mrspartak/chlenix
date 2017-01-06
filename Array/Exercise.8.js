@@ -1,7 +1,7 @@
 // Массивы
 // Удалить все повторные элементы массива
 
-var firstArray = [-1/0, -1/0, , , -1, -1, 'fucking birds in my beard', 'fucking birds in my beard', 0, 0, 0, 0, 0, 1, 2, 3, 4, 1, 3, 5, 6], currentNubmber;
+var firstArray = [-1/0, -1/0, , , -1, -1, 'fucking birds in my beard', 'fucking birds in my beard', 0, 0, 0, 0, 0, 1, 2, 3, 4, 1, 3, 5, 6,6], currentNubmber;
 
 for (var i1 = 0; i1 < (firstArray.length - 1); i1++) {
 	currentNubmber = firstArray[i1];
