@@ -15,3 +15,4 @@ for ( var i = 0; i < firstArray.length; i++) {
 standartDeviation = Math.sqrt(deviationSum / firstArray.length);
 console.log('Average: ', average);
 console.log('Standart deviation: ', standartDeviation);
+
