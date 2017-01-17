@@ -11,30 +11,30 @@ var dev = array.deviation();*/
 
 var firstArray = new Array(-1, 0, 1, 1), average = 0, standartDeviation = 0;
 
- function NumberError(message) {
+function NumberError(message) {
 	this.name = 'NumberError';
 	this.message = 'Error. Enter an array of numbers';
-	if (TypeError.captureStackTrace) {
-		TypeError.captureStackTrace(this, NumberError);
+	if (Error.captureStackTrace) {
+		Error.captureStackTrace(this, NumberError);
 	} else {
-		this.stack = (new TypeError()).stack;
+		this.stack = (new Error()).stack;
 	}
-};
+}
 
 NumberError.prototype = Object.create(Error.prototype);
 
-function isNumeric(n) {
+var isNumeric = function(n) {
 	return !isNaN(parseFloat(n)) && isFinite(n);
 };
 
 var readArray = function(array) {
-	for (var k = 0, k < array.length, k++) {
-		if !isNumeric(array[k]) {
+	for (var k = 0; k < array.length; k++) {
+		if ( !isNumeric(array[k]) ) {
 			throw new NumberError('Error. Enter an array of numbers');
 		}
 	}
 	return array;
-}
+};
 
 Array.prototype.average = function() {
 	for ( var sum = 0, i = 0; i < this.length; i++ ) {
@@ -50,23 +50,12 @@ Array.prototype.deviation = function() {
 	return standartDeviation = Math.sqrt(deviationSum / (this.length)); 
 };
 
-
-
-/*NotNumberArray = new Error('Error. Enter an array of numbers')
-Error.prototype.notNumberArray = function () {
-	for (var k = 0, k < firstArray.length, k++) {
-		if !isNumeric(firstArray[k]) {
-
-	}
-};*/
-
 try {
 	readArray(firstArray);
-	console.log('Average: ',firstArray.average() );
+	console.log('Average: ', firstArray.average() );
 	console.log('Standart deviation: ', firstArray.deviation() );
 } catch (e) {
 	if (e instanceof NumberError) {
-		if 
+	console.log(e.message);
 	}
-	console.log('Error. Enter an array of numbers').
 }
