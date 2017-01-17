@@ -17,6 +17,6 @@ Dog.prototype.bark = function() {
 	return console.log('Bark Bark!!');
 };
 
-var myDog = new Dog('Barnie');
+var myDog = new Dog(11);
 myDog.getName();
 myDog.bark();
