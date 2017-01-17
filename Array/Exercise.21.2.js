@@ -20,7 +20,6 @@ function NumberError(message) {
 		this.stack = (new Error()).stack;
 	}
 }
-
 NumberError.prototype = Object.create(Error.prototype);
 
 var isNumeric = function(n) {
