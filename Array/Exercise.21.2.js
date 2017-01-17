@@ -11,9 +11,30 @@ var dev = array.deviation();*/
 
 var firstArray = new Array(-1, 0, 1, 1), average = 0, standartDeviation = 0;
 
-Array.prototype.anything = function() {
-	console.log('Hello dear world');
+ function NumberError(message) {
+	this.name = 'NumberError';
+	this.message = 'Error. Enter an array of numbers';
+	if (TypeError.captureStackTrace) {
+		TypeError.captureStackTrace(this, NumberError);
+	} else {
+		this.stack = (new TypeError()).stack;
+	}
 };
+
+NumberError.prototype = Object.create(Error.prototype);
+
+function isNumeric(n) {
+	return !isNaN(parseFloat(n)) && isFinite(n);
+};
+
+var readArray = function(array) {
+	for (var k = 0, k < array.length, k++) {
+		if !isNumeric(array[k]) {
+			throw new NumberError('Error. Enter an array of numbers');
+		}
+	}
+	return array;
+}
 
 Array.prototype.average = function() {
 	for ( var sum = 0, i = 0; i < this.length; i++ ) {
@@ -29,30 +50,23 @@ Array.prototype.deviation = function() {
 	return standartDeviation = Math.sqrt(deviationSum / (this.length)); 
 };
 
+
+
+/*NotNumberArray = new Error('Error. Enter an array of numbers')
+Error.prototype.notNumberArray = function () {
+	for (var k = 0, k < firstArray.length, k++) {
+		if !isNumeric(firstArray[k]) {
+
+	}
+};*/
+
 try {
-	for 
+	readArray(firstArray);
 	console.log('Average: ',firstArray.average() );
 	console.log('Standart deviation: ', firstArray.deviation() );
-} catch (err) {
-
-}
-
-/*
-просто инфа для себя
-var function123 = function(array) {
-	for ( var i = 0; i < array.length; i++) {
-		if array[i]  проверка является ли значение числом throw new Error('Error. In the above array has a non-numeric values.');
-	}
-	 
-}
-var myError = new Error('Error. In the above array has a non-numeric values.');
-console.log(myError.message);
-
-try{
-
 } catch (e) {
-
-} finally {
-
-}*/
-
+	if (e instanceof NumberError) {
+		if 
+	}
+	console.log('Error. Enter an array of numbers').
+}
