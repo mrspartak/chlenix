@@ -33,9 +33,9 @@ function fibSecond(n) {
   var b = (1 - sq5) / 2;
   
   for (var i = 0; i < n + 1; i++) {
-  	console.log( (Math.pow(a, i) - Math.pow(b, i)) / sq5);
+  	console.log( Math.round( (Math.pow(a, i) - Math.pow(b, i)) / sq5 ) );
   }
 
 }
 
-fibSecond(5);
+fibSecond(100);
