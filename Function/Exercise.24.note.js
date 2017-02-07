@@ -6,9 +6,13 @@
 //на вход принимает количество чисел и выводит их
 //1 1 2
 
-/*var result = [], resultStr = '';
+//способ решения задачи с использованием рекурсии в две функции
 
-function fibonacciValue(n) {
+
+// работать с внешней переменной (массивом) для изменения значения 
+var result = [], resultStr = '';
+
+/*function fibonacciValue(n) {
 	if (n <= 1) {
 		return n;
 	} else {
@@ -23,11 +27,35 @@ function fib(r) {
 
 return resultStr = result.join(' ');
 }
+console.log( fib(25) );*/
 
-console.log( fib(10) );
+//способ решения задачи с использованием рекурсии в одну функцию
 
-*/
-function fibSecond(n) {
+function fib(n) {
+	fib.
+	var resultFib = function fibonacci(n) {
+		if (n <= 1) {
+			result.push(n)
+			return result;
+		} else {
+			result.push( fibonacci(n - 1) + fibonacci(n - 2) )
+			return result;
+		}
+	}
+	return resultFib;
+}
+
+console.log( fibonacci(2) );
+
+
+
+
+
+
+
+//способ решения задачи без рекурсии: 
+
+/*function fibSecond(n) {
   var sq5 = Math.sqrt(5);
   var a = (1 + sq5) / 2;
   var b = (1 - sq5) / 2;
@@ -38,4 +66,4 @@ function fibSecond(n) {
 
 }
 
-fibSecond(100);
+fibSecond(3);*/
