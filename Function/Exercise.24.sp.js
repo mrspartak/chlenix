@@ -5,16 +5,18 @@
 */
 Math.fibonacci = function(n, returnValue) {
 	var val;
+	// Инициализирую свойство для хранения значений
 	if(typeof Math.__fibDict == 'undefined') Math.__fibDict = [0, 1];
+	// Если значение уже было посчитано, использую его
 	if(typeof Math.__fibDict[n - 1] != 'undefined') {
 		val = Math.__fibDict[n - 1];
-	} else if (n <= 2) {
-		val = n - 1;
+	//Иначе считаю его и запихиваю в массив
 	} else  {
 		val = Math.fibonacci(n - 1, true) + Math.fibonacci(n - 2, true);
+		Math.__fibDict[n - 1] = val;
 	}
-	Math.__fibDict[n - 1] = val;
-	return returnValue === true ? val : Math.__fibDict;
+	//В зависимости от доп значение функции возвращаю или значение или массив
+	return returnValue === true ? val : Math.__fibDict.slice(0, n);
 }
 
 console.log( Math.fibonacci(5) );
