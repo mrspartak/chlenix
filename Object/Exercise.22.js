@@ -7,57 +7,30 @@
 // StringHelper.revert('not_camel');
 // lemac_ton
 
-var StringHelper = {}, stringExample = '_what_the_fucking_world_not_camel_';
+var StringHelper = {}, stringExample = '_sunny_and_happy_day_';
 
-Object.prototype.toCamel = function(anyString) {
-	var i = anyString.indexOf('_');
+Object.prototype.toCamel = function(string) {
+	var i = string.indexOf('_'), _foundPos;
 	
 	while (true) {
-		var foundPos = anyString.indexOf('_', i);
-		
-		if (foundPos == -1) break;
+		_foundPos = string.indexOf('_', i);
 
-		if (i = 0) {
-			anyString = anyString.substring(i + 1);
-		} else if (i = (anyString.length - 1) ) {
-			anyString = anyString.substring(0, anyString.length - 1 );
+		if (_foundPos === -1) break;
+
+		if (i === 0) {
+			string = string.substring(1);
+		} else if (i === (string.length - 1) ) {
+			string = string.substring(0, string.length - 1);
 		} else {
-			anyString = anyString.slice(0, i) + ( anyString.charAt(i + 1) ).toUpperCase() + anyString.slice(i + 2);
+			string = string.slice(0, i) + string.charAt(i + 1).toUpperCase() + string.slice(i + 2);
 		}
-		i = anyString.indexOf('_');
-		console.log(anyString);
+		i = string.indexOf('_');
 	}
-/*
-
-	while (i < anyString.length) {
-		
-		if ( ~anyString.indexOf('_') ) {
-			
-			if (anyString.indexOf('_') === anyString.length - 1) {
-				anyString = anyString.slice(0, i); 
-			}
-			else {
-				anyString = anyString.slice(0, i) + anyString[i+1].toUpperCase() + anyString.slice(i+2);
-				i = anyString.indexOf('_');
-			}
-
-		} else break;
-	}
-*/
-	return anyString;
+	return string;
 }
 
-/*
-while (true) {
-  var foundPos = anyString.indexOf('_', i);
-  if (foundPos == -1) break;
-
-  i = foundPos + 1; // продолжить поиск со следующей
-}
-*/
-
-Object.prototype.revert = function(anyString) {
-	return anyString = anyString.split('').reverse().join('');
+Object.prototype.revert = function(string) {
+	return string = string.split('').reverse().join('');
 }
 
 
