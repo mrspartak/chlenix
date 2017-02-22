@@ -5,11 +5,9 @@
 // Ввод: 10, 22
 // Вывод: 11
 
-
 var classOf = function(object) {
 	return Object.prototype.toString.call(object).slice(8, -1);
 };
-
 
 var a = 10, b = 22;
 
@@ -17,7 +15,7 @@ function countNumeral(a, b, n) {
 	var _arr = [], $arr = [], max, min, count = 0, _str = '';
 	
 	if (a > b) {
-		max = a;
+		max = a;е
 		min = b;
 	} 
 	else {
