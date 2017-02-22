@@ -24,3 +24,7 @@ function returnWordLength(string) {
 
 console.log('Our string: ' + string);
 console.log( returnWordLength(string) );
+
+/*
+Очень плохая практика перегружать массив другим типом данных. Используй для чисел второй массив просто
+*/
