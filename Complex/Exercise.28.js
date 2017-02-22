@@ -35,3 +35,25 @@ function typeOfTriangle(a, b, c) {
 }
 
 console.log( typeOfTriangle(a1, a2, a3) );
+
+/*
+Просто рекомендации. Если есть возможность избавиться от лишних табов, лучше так и поступить. Но это лично мое мнение, тут оно не обязательно истинно.
+Например 
+if (_arr[1] + _arr[2] <= _arr[0]) {
+	_type = 'Triangle doesn\'t exist';
+} else {
+	//код
+}
+return _type;
+
+Можно написать как
+if (_arr[1] + _arr[2] <= _arr[0]) return 'Triangle doesn\'t exist';
+//код будет на один таб левее, когда много табов, это может играть немалое значение для читаемости
+
+Также, т.к. у тебя не проводятся дополнительные вычисления, объявление переменной _type излишне, ее сразу можно возвращать.
+if (_count > 0) {
+	return 'It\'s acute-angled triangle';
+} else if (_count < 0) {
+	return 'It\'s obtuse-angled triangle';
+} else return 'It\'s right-angled triangle'
+*/
