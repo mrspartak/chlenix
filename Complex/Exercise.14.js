@@ -24,11 +24,11 @@ function countNumeral(a, b, n) {
 	}
 
 	for (var i = 0; i < max - min - 1; i++) {
-		_arr[i] = min + i + 1;
+		_arr[i] = min + i + 1;					// переписать через конкатинацию и регэксп в одну строку
 		_arr[i] = _arr[i].toString().split('');
 	}
 
-	for (var i2 = 0; i2 < _arr.lenght; i2++) {
+	for (var i2 = 0; i2 < _arr.length; i2++) {
 		_arr[i2]=_arr[i2].join();
 	}
 
@@ -38,16 +38,12 @@ function countNumeral(a, b, n) {
 
 	console.log(_str);
 
-	for (var i3 = 0; i3 < _str.lenght; i3++) {
-		if (_str[i3] == 1) {
+	for (var i3 = 0; i3 < _str.length; i3++) {
+		if (_str[i3] == '1') {
 			count ++; 
 		}
 	}
-/*	return _str.split(n).lenght;*/
 
-
-/*	console.log($arr.lenght );*/
-	
 	return count;
 }
 
