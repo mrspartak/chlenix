@@ -6,15 +6,19 @@
 // Ввод: str = 'Hi {name}'; obj = {name: 'Pavel'};
 // Вывод: Hi Pavel
 
-
 var str = 'Hello my dear friend, {name}!', obj = {name: 'Spartak'};
 
-function templateString(string, object) {
-	return string.replace( /{\w+}/, function(str){
-		var _str = str.slice(1,-1);
-		
-		return object[_str];
-	})
-}
-
 console.log( templateString(str, obj) );
+
+function templateString(string, object) {
+	var _a, _b;
+
+	_a = string.match( /{\w+}/i );
+	_b = _a[0].slice(1,-1);
+
+	if ( object.hasOwnProperty(_b) ) {
+		return string.replace(_a, object[_b]);
+	} else {
+		return string;
+	}
+}
